@@ -6,7 +6,8 @@ async function getConnection(){
     port:5432,
     user:'andres',
     password:'dcandres123',
-    database:'api_AppTesis'
+    database:'api_AppTesis',
+    ssl: true
   });
   await client.connect();
   return client;
