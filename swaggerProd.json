@@ -9,7 +9,7 @@
       "url": "https://opensource.org/licenses/MIT"
     }
   },
-  "host": "https://serviciostesis.herokuapp.com",
+  "host": "serviciostesis.herokuapp.com",
   "basePath": "/",
   "paths": {
     "/api/v1/users/list-users":{
