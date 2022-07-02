@@ -8,9 +8,10 @@ const options={
 }
 
 if(config.isProd){
-  options.ssl={
-    rejectUnauthorized:false
-  }
+  options.dialectOptions={
+    sl:{
+      rejectUnauthorized:false
+  }}
 }
 
 const sequelize = new Sequelize(config.dbUrl,options);
