@@ -5,7 +5,9 @@ const cors = require('cors');
 //Swagger
 const swaggerUi = require("swagger-ui-express"),
   swaggerDocument = require("./swagger.json");
-const swaggerDoc=require('swagger-jsdoc');
+
+const swaggerUiProd = require("swagger-ui-express"),
+  swaggerDocumentProd = require("./swaggerProd.json");
 const path=require('path');
 
 const {logErrors,errorHandler,boomErrorHandler} = require('./middlewares/errorHandler');
@@ -30,7 +32,7 @@ const options={
 app.use(cors(options));
 routerApi(app);
 app.use(boomErrorHandler);
-app.use("/",swaggerUi.serve,swaggerUi.setup(swaggerDocument));
+app.use("/",swaggerUi.serve,swaggerUi.setup(swaggerDocumentProd));
 app.listen(port, ()=>{
   console.log('My Port '+ port);
 });

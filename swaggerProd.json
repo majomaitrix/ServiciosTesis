@@ -1,0 +1,81 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "My Api Demo",
+    "description": "My API For Demo",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "https://serviciostesis.herokuapp.com",
+  "basePath": "/",
+  "paths": {
+    "/api/v1/users/list-users":{
+      "get":{
+        "tags":["Users"],
+        "summary":"Get all Users",
+        "responses":{
+          "200":{
+            "description":"OK",
+            "schema":{
+              "$ref":"#/definitions/Users"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "User":{
+      "required":["fisrtNameUser","lastNameUser","passwordUser","tipodocUser","docUser","ciudadUser","emailUser","rolUser","imageUser","nacimientoUser"],
+      "properties":{
+        "fisrtNameUser": {
+          "type": "string"
+        },
+        "lastNameUser": {
+          "type": "string"
+        },
+        "passwordUser": {
+          "type": "string"
+        },
+        "tipodocUser": {
+          "type": "string"
+        },
+        "docUser": {
+          "type": "integer"
+        },
+        "ciudadUser": {
+          "type": "string"
+        },
+        "emailUser": {
+          "type": "string"
+        },
+        "rolUser": {
+          "type": "string"
+        },
+        "imageUser": {
+          "type": "string"
+        },
+        "nacimientoUser": {
+          "type": "date"
+        }
+      }
+    },
+
+    "Users": {
+      "type": "array",
+      "$ref": "#/definitions/User"
+    }
+  },
+  "tags": [
+    {
+      "name": "Products",
+      "description": "Productos Quemados"
+    }
+  ],
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"]
+}
