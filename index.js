@@ -32,7 +32,7 @@ const options={
 app.use(cors(options));
 routerApi(app);
 app.use(boomErrorHandler);
-app.use("/",swaggerUi.serve,swaggerUi.setup(swaggerDocumentProd));
+app.use("/",swaggerUi.serve,swaggerUi.setup(swaggerDocument));
 app.listen(port, ()=>{
   console.log('My Port '+ port);
 });
